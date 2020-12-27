@@ -7,6 +7,10 @@ plugins {
 	kotlin("plugin.spring") version "1.4.21"
 }
 
+sourceSets.main {
+	java.srcDirs("src/main/kotlin")
+}
+
 group = "com.kube"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
@@ -37,4 +41,5 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+	include("**/*Test.class")
 }
