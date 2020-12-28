@@ -14,7 +14,7 @@ class DemoController {
 
     @GetMapping("create/{name}")
     fun createName(@PathVariable name: String): Mono<Register> {
-        val uuid  = UUID.randomUUID()
+        val uuid = UUID.randomUUID()
         val register = Register(counter.incrementAndGet(), "$name - $uuid")
         return Mono.just(register)
     }
